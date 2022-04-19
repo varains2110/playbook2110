@@ -1,0 +1,8 @@
+---
+ - hosts: vlab
+   remote_user: ansible
+   become: yes
+   become_user: root
+   tasks:
+    - name: install httpd
+      yum: name=httpd   state=present

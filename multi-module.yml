@@ -1,0 +1,8 @@
+---
+- hosts: pt
+  become: yes
+  gather_facts: false
+  name: multi-module
+  tasks:
+   -  copy: src=/var/log/messages dest=/tmp/
+   -  file: path=/tmp/testfile state=touch
