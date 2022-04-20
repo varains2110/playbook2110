@@ -1,0 +1,9 @@
+---
+- hosts: pt
+  tasks:
+   - name: copy the patch scripts
+     copy: src=/root/ospatch_13042022.sh dest=/tmp/script1.sh
+   - name: set permissions
+     file: name=/tmp/script1.sh owner=root group=root mode=0755
+   - name: execute the script
+     shell: /bin/bash /tmp/script1.sh
